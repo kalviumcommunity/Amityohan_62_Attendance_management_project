@@ -1,4 +1,5 @@
 package com.school;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -20,7 +21,7 @@ public class Main {
         // courses[1].setDetails("MA202", "Linear Algebra");
 
         Course course1=new Course("Intro to Programming");
-        Course course2=new Course("Linear Algebra"); 
+        // Course course2=new Course("Linear Algebra");
 
         System.out.println("\nRegistered Students:");
         student1.displayDetails();
@@ -34,7 +35,7 @@ public class Main {
         //     if (course != null) course.displayDetails();
         // }
         course1.displayDetails();
-        course2.displayDetails();
+        // course2.displayDetails();
         System.out.println("\nSession 2: Core Domain Modelling Complete.");
 
         System.out.println("New Student is added");
@@ -45,5 +46,23 @@ public class Main {
         course3.displayDetails();  
 
         System.out.println("\nSession 3: Constructor initialisation and Auto-ID generation complete.");
+        
+        List<AttendanceRecord> attendanceLog = new ArrayList<>();
+        // creating a valid student record and adding into log
+        AttendanceRecord record1 = new AttendanceRecord(student1.getStudentId(), course1.getCourseId(), "Present");
+        attendanceLog.add(record1);
+        
+        //creating invalid student record and adding into log
+        
+        AttendanceRecord record2 = new AttendanceRecord(student2.getStudentId(), course1.getCourseId(), "Late");
+        attendanceLog.add(record2);
+
+        AttendanceRecord record3 = new AttendanceRecord(student3.getStudentId(), course3.getCourseId(), "Absent");
+        attendanceLog.add(record3);
+
+        for(AttendanceRecord record : attendanceLog) {
+            record.displayDetails();
+        }
+        System.out.println("\nSession 4: Data encapsulation and Attendance Record creation complete.");
     }
 }

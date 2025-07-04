@@ -10,7 +10,12 @@ public class Student {
         this.name=name;
 
     }
-    
+    public int getStudentId() {
+        return studentId;
+    }
+    public String getName() {
+        return name;
+    }
     // public void setDetails(int id, String studentName) {
     //     this.studentId = id; // using 'this' for clarity
     //     this.name = studentName;
